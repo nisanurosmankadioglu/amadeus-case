@@ -1,0 +1,21 @@
+{
+  "name": "amadeus-case",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test:api": "cucumber-js -p api; node reporter.js",
+    "test:ui": "cucumber-js -p ui; node reporter.js"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.3.0",
+    "axios": "^1.4.0",
+    "cucumber-html-reporter": "^7.1.1"
+  },
+  "dependencies": {
+    "chai": "^4.3.8",
+    "chai-http": "^4.4.0",
+    "dotenv": "^16.3.1",
+    "playwright": "^1.37.1"
+  }
+}
