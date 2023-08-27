@@ -6,7 +6,7 @@ const { selectors } = require('../../selectors/flights')
 let browser, page;
 
 Given('I am on the application page', async () => {
-  browser = await chromium.launch({ headless: true });
+  browser = await chromium.launch({ headless: false });
   page = await browser.newPage();
   await page.goto('https://flights-app.pages.dev');
 });
@@ -42,7 +42,7 @@ When('I click {string} in the To comboboxx', async (value) => {
   await page.click(selectors.toButton);
   await page.waitForSelector(selectors.toDropDown);
   await page.$eval(selectors.toDropDown, (dropdown) => {
-    dropdown.scrollBy(0, 100); // Adjust the scroll value as needed
+    dropdown.scrollBy(0, 100);
   });
   await page.click(selectors.losAngeles);
 });
